@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'GothicBoldRegular';
+  src: local('../assets/fonts/copperplate_Gothic_Bold_Regular.ttf'),
+    local('../assets/fonts/copperplate_Gothic_Bold_Regular.ttf'),
+    url(../assets/fonts/copperplate_Gothic_Bold_Regular.ttf) format('truetype');
+  font-display: swap;
+}
+.bp-gothic-bold-regular-font {
+  font-family: 'GothicBoldRegular' !important;
+}
