@@ -200,13 +200,12 @@ export class ProposalViewPageComponent {
   readonly depositData$ = this._activedRoute.paramMap.pipe(
     map((paramMap) => {
       const proposalId = paramMap.get('proposalId');
-      const ownerPubkey = paramMap.get('ownerPubkey');
 
-      if (proposalId === null || ownerPubkey === null) {
+      if (proposalId === null) {
         return null;
       }
 
-      return { proposalId, ownerPubkey };
+      return { proposalId };
     })
   );
 

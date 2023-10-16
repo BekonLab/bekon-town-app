@@ -18,7 +18,7 @@ export const proposalRoutes: Route[] = [
     ],
   },
   {
-    path: 'proposals/:ownerPubkey/view/:proposalId',
+    path: 'proposals/view/:proposalId',
     loadComponent: () =>
       import('./proposal-view-shell.component').then(
         (m) => m.ProposalViewShellComponent

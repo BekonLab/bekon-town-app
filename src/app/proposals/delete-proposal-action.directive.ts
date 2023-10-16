@@ -54,6 +54,7 @@ export class DeleteProposalActionDirective extends ComponentStore<ViewModel> {
         error = JSON.stringify(err);
       }
 
+      console.error(err);
       this.patchState({ error });
       this.hdDeleteProposalError.emit(error);
     } finally {

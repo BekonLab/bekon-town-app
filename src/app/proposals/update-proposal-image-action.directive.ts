@@ -59,6 +59,7 @@ export class UpdateProposalImageActionDirective extends ComponentStore<ViewModel
         error = JSON.stringify(err);
       }
 
+      console.error(err);
       this.patchState({ error });
       this.hdUpdateProposalImageError.emit(error);
     } finally {

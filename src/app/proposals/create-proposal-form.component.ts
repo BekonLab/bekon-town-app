@@ -31,7 +31,7 @@ export interface CreateProposalFormPayload {
           [(ngModel)]="model.name"
           #nameControl="ngModel"
           required
-          maxlength="50"
+          maxlength="32"
           hdInput
           hdInputClass="w-full"
         />

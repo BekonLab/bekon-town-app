@@ -126,12 +126,7 @@ export class PublishProposalModalComponent {
       duration: 3000,
     });
     this._matDialogRef.close();
-    this._router.navigate([
-      '/proposals',
-      this.data.ownerPubkey,
-      'view',
-      this.data.id,
-    ]);
+    this._router.navigate(['/proposals', 'view', this.data.id]);
   }
 
   @HostListener('hdPublishProposalError') onPublishProposalError() {

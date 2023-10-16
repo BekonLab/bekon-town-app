@@ -56,6 +56,7 @@ export class PublishProposalActionDirective extends ComponentStore<ViewModel> {
         error = JSON.stringify(err);
       }
 
+      console.error(err);
       this.patchState({ error });
       this.hdPublishProposalError.emit(error);
     } finally {

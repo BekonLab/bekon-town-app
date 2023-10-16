@@ -60,6 +60,7 @@ export class CreateProposalActionDirective extends ComponentStore<ViewModel> {
         error = JSON.stringify(err);
       }
 
+      console.error(err);
       this.patchState({ error });
       this.hdCreateProposalError.emit(error);
     } finally {

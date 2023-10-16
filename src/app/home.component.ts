@@ -34,7 +34,9 @@ import { ButtonDirective, HeaderComponent } from './shared';
       >
         <img src="assets/logo.png" class="w-56 h-56" />
 
-        <h1 class="bp-gothic-bold-regular-font text-6xl">Bekon Town</h1>
+        <h1 class="bp-gothic-bold-regular-font text-6xl text-center">
+          Bekon Town
+        </h1>
         <p class="text-center">
           Empowering citizens to shape their community's future with
           <b>Bekon Town!</b> <br />
@@ -76,7 +78,7 @@ import { ButtonDirective, HeaderComponent } from './shared';
           <h2 class="text-6xl">The Solution</h2>
         </hd-header>
 
-        <ul class="flex items-stretch">
+        <ul class="flex items-stretch flex-col md:flex-row">
           <li
             class="px-4 py-16 border-2 border-black hover:bg-[#F8FAFC] hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
           >
@@ -114,16 +116,18 @@ import { ButtonDirective, HeaderComponent } from './shared';
       </section>
 
       <section class="p-4 border-b-2 border-black">
-        <iframe
-          class="mx-auto"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/3f31oufqFSM?si=4S4UnAOQDKNRNntW"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <div class=" max-w-[60rem] mx-auto">
+          <div class="relative w-full overflow-hidden pt-[56.25%]">
+            <iframe
+              class="absolute top-0 left-0 bottom-0 right-0 w-full h-full border-none"
+              src="https://www.youtube.com/embed/3f31oufqFSM?si=4S4UnAOQDKNRNntW"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -131,9 +135,9 @@ import { ButtonDirective, HeaderComponent } from './shared';
           <h2 class="text-6xl">Roadmap</h2>
         </hd-header>
 
-        <article class="flex items-stretch h-48 group">
+        <article class="flex items-stretch h-auto md:h-48 group">
           <div
-            class="flex-1 flex flex-col justify-center px-8 py-4 border-2 border-black group-hover:bg-[#F8FAFC] group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
+            class="flex-1 flex flex-col justify-center px-2 py-2 md:px-8 md:py-4 border-2 border-black group-hover:bg-[#F8FAFC] group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
           >
             <h3 class="text-lg font-semibold">SPL Governance Integration</h3>
             <p>
@@ -142,10 +146,12 @@ import { ButtonDirective, HeaderComponent } from './shared';
             </p>
           </div>
           <div
-            class="border-2 border-black flex-1 flex flex-col justify-center px-8 py-4"
+            class="border-2 border-black w-24 md:flex-1 flex flex-col justify-center px-2 py-2 md:px-8 md:py-4"
           >
             <p class="flex gap-2 items-center text-2xl">
-              <mat-icon inline class="scale-150">arrow_right</mat-icon>
+              <mat-icon inline class="scale-150 hidden md:inline-block"
+                >arrow_right</mat-icon
+              >
               <span
                 class="group-hover:underline transition duration-300 ease-in-out"
               >
@@ -155,9 +161,9 @@ import { ButtonDirective, HeaderComponent } from './shared';
           </div>
         </article>
 
-        <article class="flex items-stretch h-48 group">
+        <article class="flex items-stretch h-auto md:h-48 group">
           <div
-            class="border-2 border-black flex-1 flex flex-col justify-center px-8 py-4 items-end"
+            class="border-2 border-black w-24 md:flex-1 flex flex-col justify-center px-2 py-2 md:px-8 md:py-4 items-end"
           >
             <p class="flex gap-2 items-center text-2xl">
               <span
@@ -165,11 +171,13 @@ import { ButtonDirective, HeaderComponent } from './shared';
               >
                 Q1 2024
               </span>
-              <mat-icon inline class="scale-150">arrow_left</mat-icon>
+              <mat-icon inline class="scale-150 hidden md:inline-block"
+                >arrow_left</mat-icon
+              >
             </p>
           </div>
           <div
-            class="flex-1 flex flex-col justify-center px-8 py-4 border-2 border-black group-hover:bg-[#F8FAFC] group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
+            class="flex-1 flex flex-col justify-center px-2 py-2 md:px-8 md:py-4 border-2 border-black group-hover:bg-[#F8FAFC] group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
           >
             <h3 class="text-lg font-semibold">Budgeting Tools for Providers</h3>
             <p>
@@ -179,9 +187,9 @@ import { ButtonDirective, HeaderComponent } from './shared';
           </div>
         </article>
 
-        <article class="flex items-stretch h-48 group">
+        <article class="flex items-stretch h-auto md:h-48 group">
           <div
-            class="flex-1 flex flex-col justify-center px-8 py-4 border-2 border-black group-hover:bg-[#F8FAFC] group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
+            class="flex-1 flex flex-col justify-center px-2 py-2 md:px-8 md:py-4 border-2 border-black group-hover:bg-[#F8FAFC] group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
           >
             <h3 class="text-lg font-semibold">Prepare educative materials</h3>
             <p>
@@ -191,10 +199,12 @@ import { ButtonDirective, HeaderComponent } from './shared';
             </p>
           </div>
           <div
-            class="border-2 border-black flex-1 flex flex-col justify-center px-8 py-4"
+            class="border-2 border-black w-24 md:flex-1 flex flex-col justify-center px-2 py-2 md:px-8 md:py-4"
           >
             <p class="flex gap-2 items-center text-2xl">
-              <mat-icon inline class="scale-150">arrow_right</mat-icon>
+              <mat-icon inline class="scale-150 hidden md:inline-block"
+                >arrow_right</mat-icon
+              >
               <span
                 class="group-hover:underline transition duration-300 ease-in-out"
               >
@@ -204,9 +214,9 @@ import { ButtonDirective, HeaderComponent } from './shared';
           </div>
         </article>
 
-        <article class="flex items-stretch h-48 group">
+        <article class="flex items-stretch h-auto md:h-48 group">
           <div
-            class="border-2 border-black flex-1 flex flex-col justify-center px-8 py-4 items-end"
+            class="border-2 border-black w-24 md:flex-1 flex flex-col justify-center px-2 py-2 md:px-8 md:py-4 items-end"
           >
             <p class="flex gap-2 items-center text-2xl">
               <span
@@ -214,11 +224,13 @@ import { ButtonDirective, HeaderComponent } from './shared';
               >
                 Q3 2024
               </span>
-              <mat-icon inline class="scale-150">arrow_left</mat-icon>
+              <mat-icon inline class="scale-150 hidden md:inline-block"
+                >arrow_left</mat-icon
+              >
             </p>
           </div>
           <div
-            class="flex-1 flex flex-col justify-center px-8 py-4 border-2 border-black group-hover:bg-[#F8FAFC] group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
+            class="flex-1 flex flex-col justify-center px-2 py-2 md:px-8 md:py-4 border-2 border-black group-hover:bg-[#F8FAFC] group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] group-hover:shadow-[4px_4px_1px_black] transition duration-300 ease-in-out"
           >
             <h3 class="text-lg font-semibold">Activation Program</h3>
             <p>
@@ -229,8 +241,10 @@ import { ButtonDirective, HeaderComponent } from './shared';
         </article>
       </section>
 
-      <footer class="flex">
-        <div class="w-72 p-4 border-r-2 border-black">
+      <footer class="flex flex-col md:flex-row">
+        <div
+          class="w-full md:w-56 md:shrink-0 p-4 border-r-2 border-b-2 border-black"
+        >
           <img src="assets/logo.png" class="w-24 h-24 mx-auto" />
 
           <p class="bp-gothic-bold-regular-font text-xl text-center mb-2">
@@ -269,10 +283,10 @@ import { ButtonDirective, HeaderComponent } from './shared';
               currently participating in the Hyperdrive Solana Hackathon!
             </p>
 
-            <div>
+            <div class="flex flex-col gap-0 md:flex-row md:gap-2">
               <a
                 hdButton
-                hdButtonClass="inline-block mr-4"
+                hdButtonClass="inline-block"
                 href="./assets/bekon-town-pitch-deck.pdf"
                 download="bekon-town-pitch-deck.pdf"
               >
@@ -290,7 +304,9 @@ import { ButtonDirective, HeaderComponent } from './shared';
           </div>
         </div>
 
-        <div class="w-72 border-l-2 border-black grid grid-rows-3">
+        <div
+          class="w-full md:w-56 md:shrink-0 border-l-2 border-black grid grid-rows-3"
+        >
           <a
             hdButton
             hdButtonClass="flex-1 flex items-center justify-center gap-2"

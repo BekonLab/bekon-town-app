@@ -14,7 +14,6 @@ import { DepositProposalFormComponent } from './deposit-proposal-form.component'
 import { DepositProposalPayload } from './proposal-api.service';
 
 export interface DepositProposalModalData {
-  ownerPubkey: string;
   proposalId: string;
 }
 
@@ -37,7 +36,6 @@ export interface DepositProposalModalData {
       <div class="p-4 min-w-[350px]">
         <hd-deposit-proposal-form
           (depositProposal)="onDepositProposal({
-            ownerPubkey: data.ownerPubkey,
             proposalId: data.proposalId,
             amount: $event.amount,
           })"

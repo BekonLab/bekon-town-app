@@ -57,6 +57,7 @@ export class DepositProposalActionDirective extends ComponentStore<ViewModel> {
         error = JSON.stringify(err);
       }
 
+      console.error(err);
       this.patchState({ error });
       this.hdDepositProposalError.emit(error);
     } finally {

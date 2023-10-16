@@ -11,7 +11,7 @@ import { UpdateProposalImageModalComponent } from './update-proposal-image-modal
       (change)="onFileChange($event)"
       type="file"
       name="fileUrl"
-      accept="image/jpeg, image/png, image/webp"
+      accept="image/png"
     />
   `,
   standalone: true,

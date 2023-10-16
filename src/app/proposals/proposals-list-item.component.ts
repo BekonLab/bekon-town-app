@@ -9,13 +9,13 @@ import { Proposal } from './proposal';
   template: `
     <a
       *ngIf="proposal"
-      [routerLink]="[proposal.ownerPubkey, 'view', proposal.id]"
+      [routerLink]="['view', proposal.id]"
       hdButton
       hdButtonClass="block"
       hdButtonSize="lg"
     >
       <img
-        class="w-full h-40 object-cover mb-2"
+        class="w-full h-56 object-cover mb-2"
         [src]="proposal.imageUrl"
         alt=""
       />
@@ -36,7 +36,7 @@ import { Proposal } from './proposal';
         </p>
       </div>
 
-      <p>{{ proposal.description }}</p>
+      <p class="line-clamp-3 h-[4.5rem]">{{ proposal.description }}</p>
     </a>
   `,
   imports: [NgIf, DecimalPipe, RouterLink, ToUserValuePipe, ButtonDirective],

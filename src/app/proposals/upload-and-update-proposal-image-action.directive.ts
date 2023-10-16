@@ -62,6 +62,7 @@ export class UploadAndUpdateProposalImageActionDirective extends ComponentStore<
         error = JSON.stringify(err);
       }
 
+      console.error(err);
       this.patchState({ error });
       this.hdUploadAndUpdateProposalImageError.emit(error);
     } finally {

@@ -38,7 +38,6 @@ export interface UpdateProposalImagePayload {
 }
 
 export interface DepositProposalPayload {
-  ownerPubkey: string;
   proposalId: string;
   amount: number;
 }
@@ -46,7 +45,6 @@ export interface DepositProposalPayload {
 export interface FindOneProposalFilterById {
   name: 'filterById';
   id: string;
-  ownerPubkey: string;
 }
 
 export type FindOneProposalFilter = FindOneProposalFilterById;
@@ -175,11 +173,7 @@ export class ProposalApiService {
     // init proposal on-chain
     const proposalId = parse(pendingProposal.id);
     const [proposal] = PublicKey.findProgramAddressSync(
-      [
-        Buffer.from('proposal', 'utf-8'),
-        provider.publicKey.toBuffer(),
-        proposalId,
-      ],
+      [Buffer.from('proposal', 'utf-8'), proposalId],
       program.programId
     );
     const [proposalVault] = PublicKey.findProgramAddressSync(
@@ -240,14 +234,13 @@ export class ProposalApiService {
     const proposalParams = {
       id: [...proposalId],
       name: pendingProposal.name,
-      description: pendingProposal.description,
       proposalUri: metadataUri,
     };
     await program.methods
       .initProposal(proposalParams)
       .accounts(proposalAccounts)
       .preInstructions([
-        ComputeBudgetProgram.setComputeUnitLimit({ units: 300000 }),
+        ComputeBudgetProgram.setComputeUnitLimit({ units: 600000 }),
       ])
       .rpc();
 
@@ -263,11 +256,7 @@ export class ProposalApiService {
     }
 
     const [proposal] = PublicKey.findProgramAddressSync(
-      [
-        Buffer.from('proposal', 'utf-8'),
-        new PublicKey(payload.ownerPubkey).toBuffer(),
-        parse(payload.proposalId),
-      ],
+      [Buffer.from('proposal', 'utf-8'), parse(payload.proposalId)],
       program.programId
     );
     const [proposalVault] = PublicKey.findProgramAddressSync(
@@ -348,11 +337,7 @@ export class ProposalApiService {
     filters: FindOneProposalFilter
   ): Promise<Proposal | null> {
     const [proposalPubkey] = PublicKey.findProgramAddressSync(
-      [
-        Buffer.from('proposal', 'utf-8'),
-        new PublicKey(filters.ownerPubkey).toBuffer(),
-        parse(filters.id),
-      ],
+      [Buffer.from('proposal', 'utf-8'), parse(filters.id)],
       program.programId
     );
 
@@ -382,7 +367,7 @@ export class ProposalApiService {
       description: proposalNft.json?.description,
       imageUrl: proposalNft.json?.image,
       vaultAmount: Number(proposalVaultAccount.amount),
-      ownerPubkey: filters.ownerPubkey,
+      ownerPubkey: proposalAccount.authority.toBase58(),
       mintPubkey: proposalMint.toBase58(),
       vaultPubkey: proposalAccount.vault.toBase58(),
     });
